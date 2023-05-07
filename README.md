@@ -17,3 +17,4 @@ For this to work we need to run the server inside songsubmit directory which run
 At the moment I'm working on 
 1) How to make this html and css part of just one directory.
 
+![ArtistApp](https://user-images.githubusercontent.com/70113362/236653696-e1f6426d-90df-4e14-aa1c-0db9af03886c.png)
