@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <title>ReleaseIt</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1>What's the Song</h1>
+        <a href="/logout" class="btn btn-danger">Logout</a>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-6">
+          <form action="/songs" method="POST" class="row justify-content-center mb-4">
+            <div class="col-10 mb-3">
+              <label for="songName">Song Name</label>
+              <input class="form-control" type="text" placeholder="Enter Song Name" name="songName">
+            </div>
+            <div class="col-10 mb-3">
+              <label for="artistName">Artist Name</label>
+              <input class="form-control" type="text" placeholder="Enter Your Artist Name" name="artistName">
+            </div>
+            <div class="mb-3">
+              <label for="Roll">lyrics</label>
+               <textarea class="form-control" id="lyrics" rows="5" placeholder="Type your Lyrics" name ="lyrics"></textarea>
+            </div>
+            <div class="col-8 mb3">
+              <button class="btn btn-success add-btn" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="col-10 mt-5">
+            <table class="table table-striped table-dark">
+              <thead>
+                <tr>
+                  <th>Song Name</th>
+                  <th>Artist Name</th>
+                  <th>Lyrics</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody class="peoples-list">
+                <% for(var i=0; i<songs.length; i++) { %>
+                  <tr class="tabla">
+                    <td contenteditable="true" class="<%= songs[i].songName %>"><%= songs[i].songName %></td>
+                    <td contenteditable="true" class="<%= songs[i].artistName %>"><%= songs[i].artistName %></td>
+                    <td contenteditable="true" class="<%= songs[i].lyrics%>"><%= songs[i].lyrics %></td>
+                    <td>
+                      <a href="" class="btn-warning btn sm-save">Save</a>
+                      <a href="" class="btn-warning btn sm-delete">Delete</a>
+                    </td>
+                  </tr>
+                <% } %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
